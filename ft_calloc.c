@@ -6,7 +6,7 @@
 /*   By: doriani <doriani@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 13:20:38 by doriani           #+#    #+#             */
-/*   Updated: 2023/03/30 03:04:30 by doriani          ###   ########.fr       */
+/*   Updated: 2023/04/01 00:08:00 by doriani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_calloc(size_t count, size_t size)
 	ptr = malloc(bytes);
 	if (!ptr)
 		return (NULL);
-	while (bytes--)
-		((char *)ptr)[bytes] = 0;
+	while (bytes)
+		((char *)ptr)[--bytes] = 0;
 	return (ptr);
 }
