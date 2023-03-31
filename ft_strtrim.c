@@ -29,9 +29,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (end > start && ft_strchr(set, s1[end]))
 		end--;
 	len = end - start;
-	str = malloc(sizeof(char) * (len + 1));
+	str = ft_substr(s1, start, len + 1);
 	if (!str)
 		return (NULL);
-	str = ft_substr(s1, start, len + 1);
 	return (str);
 }
