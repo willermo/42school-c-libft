@@ -21,7 +21,7 @@ void	*ft_calloc(size_t count, size_t size)
 	ptr = malloc(bytes);
 	if (!ptr)
 		return (NULL);
-	while (bytes--)
-		((char *)ptr)[bytes] = 0;
+	while (bytes)
+		((char *)ptr)[--bytes] = 0;
 	return (ptr);
 }
