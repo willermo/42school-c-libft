@@ -6,7 +6,7 @@
 /*   By: doriani <doriani@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 11:33:33 by doriani           #+#    #+#             */
-/*   Updated: 2023/03/30 01:14:31 by doriani          ###   ########.fr       */
+/*   Updated: 2023/04/01 17:47:42 by doriani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,15 @@ t_result	test_ft_split(char const *s, char c, char **expected)
         if (strcmp(expected[i], r_ft[i]) != 0)
         {
             printf("Return value error: %s <-> %s\n", expected[i], r_ft[i]);
+            for (int j = 0; r_ft[j]; j++)
+                free(r_ft[j]);
+            free(r_ft);
             return (fail);
         }
         i++;
     }
+    for (int j = 0; r_ft[j]; j++)
+        free(r_ft[j]);
+    free(r_ft);
     return (pass);
 }

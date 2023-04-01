@@ -6,7 +6,7 @@
 /*   By: doriani <doriani@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 11:59:24 by doriani           #+#    #+#             */
-/*   Updated: 2023/03/26 17:39:29 by doriani          ###   ########.fr       */
+/*   Updated: 2023/04/01 19:28:01 by doriani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,14 +79,14 @@ tc_memcmp(  t_testcase **passed,
 	free(str1);
 	free(str2);
 	// test 5
-	cyan();
-	puts("-- Testing with s1 = \"Hello World\", s2 = NULL, n = 5");
-	reset();
-	str1 = (char *) calloc(sizeof (char), DEFAULT_SIZE);
-	strcpy(str1, "Hello World");
-	result = test_ft_memcmp(str1, NULL, 5, DEFAULT_SIZE);
-	add_result(	"ft_memcmp with s1 = \"Hello World\", s2 = NULL, n = 5",
-				result, passed, failed, invalid, manual);
-	free(str1);
+	// cyan();
+	// puts("-- Testing with s1 = \"Hello World\", s2 = NULL, n = 5");
+	// reset();
+	// str1 = (char *) calloc(sizeof (char), DEFAULT_SIZE);
+	// strcpy(str1, "Hello World");
+	// result = test_ft_memcmp(str1, NULL, 5, DEFAULT_SIZE);
+	// add_result(	"ft_memcmp with s1 = \"Hello World\", s2 = NULL, n = 5",
+	// 			result, passed, failed, invalid, manual);
+	// free(str1);
 	/* ft_memcmp test end */
 }

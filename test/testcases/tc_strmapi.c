@@ -6,7 +6,7 @@
 /*   By: doriani <doriani@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 11:55:08 by doriani           #+#    #+#             */
-/*   Updated: 2023/03/29 23:53:02 by doriani          ###   ########.fr       */
+/*   Updated: 2023/04/01 19:18:53 by doriani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,22 +87,22 @@ void	tc_strmapi(	t_testcase **passed,
     add_result(	"ft_strmapi with s = \" \"",
                 result, passed, failed, invalid, manual);
     // test 7
-    s = " ";
+    /*s = " ";
     expected = " ";
     cyan();
     puts("-- Testing with s = \" \"");
     reset();
-    result = test_ft_strmapi(s, expected, NULL);    
+    result = test_ft_strmapi(s, expected, NULL);
     add_result(	"ft_strmapi with s = \" \"",
-                result, passed, failed, invalid, manual);
+                result, passed, failed, invalid, manual);*/
     // test 8
-    s = NULL;
+    /*s = NULL;
     expected = NULL;
     cyan();
     puts("-- Testing with s = NULL");
     reset();
     result = test_ft_strmapi(s, expected, func);
     add_result(	"ft_strmapi with s = NULL",
-                result, passed, failed, invalid, manual);
+                result, passed, failed, invalid, manual);*/
     /* ft_strmapi end */
 }

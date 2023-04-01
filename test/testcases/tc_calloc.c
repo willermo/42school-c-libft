@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tc_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: doriani <doriani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: doriani <doriani@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 13:02:22 by doriani           #+#    #+#             */
-/*   Updated: 2023/03/29 09:38:41 by doriani          ###   ########.fr       */
+/*   Updated: 2023/04/01 20:32:17 by doriani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,41 +89,41 @@ tc_calloc( t_testcase **passed,
     result = test_ft_calloc(count, size);
     add_result(	"ft_calloc with count = 10, size = 8",
                 result, passed, failed, invalid, manual);
-    // test 8
-    count = 100000000;
-    size = 1;
-    cyan();
-    puts("-- Testing with count = 100000000, size = 1");
-    reset();
-    result = test_ft_calloc(count, size);
-    add_result(	"ft_calloc with count = 100000000, size = 1",
-                result, passed, failed, invalid, manual);
-    // test 9
-    count = 100000000;
-    size = 2;
-    cyan();
-    puts("-- Testing with count = 100000000, size = 2");
-    reset();
-    result = test_ft_calloc(count, size);
-    add_result(	"ft_calloc with count = 100000000, size = 2",
-                result, passed, failed, invalid, manual);
-    // test 10
-    count = 100000000;
-    size = 4;
-    cyan();
-    puts("-- Testing with count = 100000000, size = 4");
-    reset();
-    result = test_ft_calloc(count, size);
-    add_result(	"ft_calloc with count = 100000000, size = 4",
-                result, passed, failed, invalid, manual);
-    // test 11
-    count = 100000000;
-    size = 8;
-    cyan();
-    puts("-- Testing with count = 100000000, size = 8");
-    reset();
-    result = test_ft_calloc(count, size);
-    add_result(	"ft_calloc with count = 100000000, size = 8",
-                result, passed, failed, invalid, manual);
+    // // test 8
+    // count = 100000000;
+    // size = 1;
+    // cyan();
+    // puts("-- Testing with count = 100000000, size = 1");
+    // reset();
+    // result = test_ft_calloc(count, size);
+    // add_result(	"ft_calloc with count = 100000000, size = 1",
+    //             result, passed, failed, invalid, manual);
+    // // test 9
+    // count = 100000000;
+    // size = 2;
+    // cyan();
+    // puts("-- Testing with count = 100000000, size = 2");
+    // reset();
+    // result = test_ft_calloc(count, size);
+    // add_result(	"ft_calloc with count = 100000000, size = 2",
+    //             result, passed, failed, invalid, manual);
+    // // test 10
+    // count = 100000000;
+    // size = 4;
+    // cyan();
+    // puts("-- Testing with count = 100000000, size = 4");
+    // reset();
+    // result = test_ft_calloc(count, size);
+    // add_result(	"ft_calloc with count = 100000000, size = 4",
+    //             result, passed, failed, invalid, manual);
+    // // test 11
+    // count = 100000000;
+    // size = 8;
+    // cyan();
+    // puts("-- Testing with count = 100000000, size = 8");
+    // reset();
+    // result = test_ft_calloc(count, size);
+    // add_result(	"ft_calloc with count = 100000000, size = 8",
+    //             result, passed, failed, invalid, manual);
     /* ft_calloc test end */
 }

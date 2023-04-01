@@ -6,7 +6,7 @@
 /*   By: doriani <doriani@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 10:26:16 by doriani           #+#    #+#             */
-/*   Updated: 2023/03/25 11:24:56 by doriani          ###   ########.fr       */
+/*   Updated: 2023/04/01 17:59:11 by doriani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ t_result	test_ft_strlcat(char *dest, const char *src, size_t size, size_t ma_siz
     printf("src:  %s\n", src);
     printf("dest: %s\n", dest);
 	copy = (char *) memcpy(copy, dest, ma_size);
-	
+
 	// r_lib contains the return value of strcat
 	r_lib = strlcat(dest, src, size);
 	copy_lib = memcpy(copy_lib, dest, ma_size);
@@ -66,10 +66,12 @@ t_result	test_ft_strlcat(char *dest, const char *src, size_t size, size_t ma_siz
 	if (memcmp(copy_lib, copy_ft, ma_size) != 0)
 	{
 		printf("Memory content differ.\n");
+		free(copy);
 		free(copy_lib);
 		free(copy_ft);
 		return (fail);
 	}
+	free(copy);
 	free(copy_lib);
 	free(copy_ft);
 	if (r_lib != r_ft)

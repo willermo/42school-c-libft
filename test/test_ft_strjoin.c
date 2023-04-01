@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_ft_strjoin.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: doriani <doriani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: doriani <doriani@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 11:20:36 by doriani           #+#    #+#             */
-/*   Updated: 2023/03/29 19:00:17 by doriani          ###   ########.fr       */
+/*   Updated: 2023/04/01 17:42:30 by doriani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,13 @@ t_result	test_ft_strjoin(char const *s1, char const *s2)
     printf("Return value of strjoin:    %s\n", r_lib);
     printf("Return value of ft_strjoin: %s\n", r_ft);
     if (strcmp(r_lib, r_ft) == 0)
+    {
+        free(r_lib);
+        free(r_ft);
         return (pass);
+    }
     printf("Return value error: %s <-> %s\n", r_lib, r_ft);
+    free(r_lib);
+    free(r_ft);
     return (fail);
 }

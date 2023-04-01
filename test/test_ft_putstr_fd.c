@@ -6,7 +6,7 @@
 /*   By: doriani <doriani@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 12:57:59 by doriani           #+#    #+#             */
-/*   Updated: 2023/03/30 01:56:22 by doriani          ###   ########.fr       */
+/*   Updated: 2023/04/01 17:44:44 by doriani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,11 @@ t_result	test_ft_putstr_fd(char *s, int fd)
         if (s[i] != buffer[i])
         {
             printf("Return value error: %s <-> %s\n", s, buffer);
+            free(buffer);
             return (fail);
         }
         i++;
     }
+    free(buffer);
     return (pass);
 }

@@ -6,7 +6,7 @@
 /*   By: doriani <doriani@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 11:22:07 by doriani           #+#    #+#             */
-/*   Updated: 2023/03/29 23:18:14 by doriani          ###   ########.fr       */
+/*   Updated: 2023/04/01 17:43:30 by doriani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,11 @@ t_result	test_ft_strtrim(char const *s1, char const *set, char *expected)
     printf("Return value of ft_strtrim: %s\n", r_ft);
     printf("Expected:                   %s\n", expected);
     if (strcmp(expected, r_ft) == 0)
+    {
+        free(r_ft);
         return (pass);
+    }
     printf("Return value error: %s <-> %s\n", expected, r_ft);
+    free(r_ft);
     return (fail);
 }

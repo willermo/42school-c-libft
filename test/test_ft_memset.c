@@ -6,7 +6,7 @@
 /*   By: doriani <doriani@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 15:53:14 by doriani           #+#    #+#             */
-/*   Updated: 2023/03/22 19:16:40 by doriani          ###   ########.fr       */
+/*   Updated: 2023/04/01 17:52:26 by doriani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,9 @@ t_result	test_ft_memset(void *s, int c, size_t n, size_t ma_size)
 		if (val_lib != val_ft)
 		{
 			printf("failed at offset: %zu (%2hhx <-> %2hhx)\n", i, (unsigned char) val_lib, (unsigned char) val_ft);
+			free(copy);
+			free(copy_lib);
+			free(copy_ft);
 			return (fail);
 		}
 		i++;
@@ -69,7 +72,13 @@ t_result	test_ft_memset(void *s, int c, size_t n, size_t ma_size)
 	if (r_lib != r_ft)
 	{
 		printf("Return value error: %p <-> %p\n", r_lib, r_ft);
+		free(copy);
+		free(copy_lib);
+		free(copy_ft);
 		return (fail);
 	}
+	free(copy);
+	free(copy_lib);
+	free(copy_ft);
 	return (pass);
 }

@@ -6,7 +6,7 @@
 /*   By: doriani <doriani@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 14:00:28 by doriani           #+#    #+#             */
-/*   Updated: 2023/03/30 02:04:58 by doriani          ###   ########.fr       */
+/*   Updated: 2023/04/01 19:42:48 by doriani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	tc_putnbr_fd(  t_testcase **passed,
     close(fd);
     remove("fd.txt");
     // test 5
-    n = INT_MIN;
+    n = -2147483648;
     fd = open("fd.txt", O_RDWR | O_CREAT);
     cyan();
     puts("-- Testing with n = -2147483648");

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_ft_strlcpy.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: doriani <doriani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: doriani <doriani@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 10:26:16 by doriani           #+#    #+#             */
-/*   Updated: 2023/03/29 09:46:42 by doriani          ###   ########.fr       */
+/*   Updated: 2023/04/01 17:58:11 by doriani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ t_result	test_ft_strlcpy(char *dst, const char *src, size_t size, size_t ma_size
     printf("src: %s\n", src);
     printf("dst: %s\n", dst);
 	copy = (char *) memcpy(copy, dst, ma_size);
-	
+
 	// r_lib contains the return value of strlcpy
 	r_lib = strlcpy(dst, src, size);
 	copy_lib = (char *) memcpy(copy_lib, dst, ma_size);
@@ -50,10 +50,12 @@ t_result	test_ft_strlcpy(char *dst, const char *src, size_t size, size_t ma_size
 	if (strcmp(copy_lib, copy_ft) != 0)
 	{
 		printf("Strings differ.\n");
+		free(copy);
 		free(copy_lib);
 		free(copy_ft);
 		return (fail);
 	}
+	free(copy);
 	free(copy_lib);
 	free(copy_ft);
 	if (r_lib != r_ft)

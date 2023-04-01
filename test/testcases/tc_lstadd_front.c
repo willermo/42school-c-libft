@@ -6,7 +6,7 @@
 /*   By: doriani <doriani@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 17:47:57 by doriani           #+#    #+#             */
-/*   Updated: 2023/03/31 12:34:10 by doriani          ###   ########.fr       */
+/*   Updated: 2023/04/01 21:05:01 by doriani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ tc_lstadd_front(  t_testcase **passed,
 	result = test_ft_lstadd_front(&list, new, print_string_list);
 	add_result(	"ft_lstadd_front with lst = \"NULL\" and new = \"NULL\"",
 				result, passed, failed, invalid, manual);
+	ft_lstclear(&list, del_string);
 	// test 5
 	print_testcase("-- Testing with lst = \"NULL\" and new = \"Hello\"");
 	str2 = strdup("Hello");

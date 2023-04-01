@@ -6,7 +6,7 @@
 /*   By: doriani <doriani@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 11:42:48 by doriani           #+#    #+#             */
-/*   Updated: 2023/03/31 13:28:24 by doriani          ###   ########.fr       */
+/*   Updated: 2023/04/01 20:34:07 by doriani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	add_result(	char *description,
 		(*passed)->result = result;
 		(*passed)->next = (t_testcase *) malloc(sizeof(t_testcase));
 		(*passed) = (*passed)->next;
+		(*passed)->description = NULL;
 		(*passed)->next = NULL;
 	}
 	else if (result == fail)
@@ -50,6 +51,7 @@ void	add_result(	char *description,
 		(*failed)->result = result;
 		(*failed)->next = (t_testcase *) malloc(sizeof(t_testcase));
 		(*failed) = (*failed)->next;
+		(*failed)->description = NULL;
 		(*failed)->next = NULL;
 	}
 	else if (result == manual_check)
@@ -61,6 +63,7 @@ void	add_result(	char *description,
 		(*manual)->result = result;
 		(*manual)->next = (t_testcase *) malloc(sizeof(t_testcase));
 		(*manual) = (*manual)->next;
+		(*manual)->description = NULL;
 		(*manual)->next = NULL;
 	}
 	else
@@ -72,6 +75,7 @@ void	add_result(	char *description,
 		(*invalid)->result = result;
 		(*invalid)->next = (t_testcase *) malloc(sizeof(t_testcase));
 		(*invalid) = (*invalid)->next;
+		(*invalid)->description = NULL;
 		(*invalid)->next = NULL;
 	}
 }
@@ -151,29 +155,61 @@ void 	free_results(t_testcase *passed,
 		tmp = passed;
 		passed = passed->next;
 		free(tmp->description);
+		tmp->description = NULL;
 		free(tmp);
 	}
+	if (passed->description != NULL)
+	{
+		free(passed->description);
+		passed->description = NULL;
+	}
+	if (passed != NULL)
+		free(passed);
 	while (failed->next != NULL)
 	{
 		tmp = failed;
 		failed = failed->next;
 		free(tmp->description);
+		tmp->description = NULL;
 		free(tmp);
 	}
+	if (failed->description != NULL)
+	{
+		free(failed->description);
+		failed->description = NULL;
+	}
+	if (failed != NULL)
+		free(failed);
 	while (invalid->next != NULL)
 	{
 		tmp = invalid;
 		invalid = invalid->next;
 		free(tmp->description);
+		tmp->description = NULL;
 		free(tmp);
 	}
+	if (invalid->description != NULL)
+	{
+		free(invalid->description);
+		invalid->description = NULL;
+	}
+	if (invalid != NULL)
+		free(invalid);
 	while (manual->next != NULL)
 	{
 		tmp = manual;
 		manual = manual->next;
 		free(tmp->description);
+		tmp->description = NULL;
 		free(tmp);
 	}
+	if (manual->description != NULL)
+	{
+		free(manual->description);
+		manual->description = NULL;
+	}
+	if (manual != NULL)
+		free(manual);
 }
 void	print_header(char *header)
 {
@@ -388,6 +424,10 @@ int main(int argc, char **argv)
 	t_testcase	*failed = (t_testcase *) malloc(sizeof(t_testcase));
 	t_testcase	*invalid = (t_testcase *) malloc(sizeof(t_testcase));
 	t_testcase	*manual = (t_testcase *) malloc(sizeof(t_testcase));
+	passed->description = NULL;
+	failed->description = NULL;
+	invalid->description = NULL;
+	manual->description = NULL;
 	passed->next = NULL;
 	failed->next = NULL;
 	invalid->next = NULL;
@@ -404,6 +444,7 @@ int main(int argc, char **argv)
 	if(argc == 1)
 	{
 		print_usage();
+		free_results(passed_head, failed_head, invalid_head, manual_head);
 		return (0);
 	}
 	else

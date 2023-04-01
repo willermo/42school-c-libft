@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tc_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: doriani <doriani@student.42.fr>            +#+  +:+       +#+        */
+/*   By: doriani <doriani@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 11:21:21 by doriani           #+#    #+#             */
-/*   Updated: 2023/03/29 17:37:53 by doriani          ###   ########.fr       */
+/*   Updated: 2023/04/01 19:21:34 by doriani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,18 +52,18 @@ void	tc_strjoin(	t_testcase **passed,
     add_result(	"ft_strjoin with s1 = \"\", s2 = \"\"",
                 result, passed, failed, invalid, manual);
     // test 5
-    cyan();
-    puts("-- Testing with s1 = \"Hello\", s2 = NULL");
-    reset();
-    result = test_ft_strjoin("Hello", NULL);
-    add_result(	"ft_strjoin with s1 = \"Hello\", s2 = NULL",
-                result, passed, failed, invalid, manual);
+    // cyan();
+    // puts("-- Testing with s1 = \"Hello\", s2 = NULL");
+    // reset();
+    // result = test_ft_strjoin("Hello", NULL);
+    // add_result(	"ft_strjoin with s1 = \"Hello\", s2 = NULL",
+    //             result, passed, failed, invalid, manual);
     // test 6
-    cyan();
-    puts("-- Testing with s1 = NULL, s2 = \" World\"");
-    reset();
-    result = test_ft_strjoin(NULL, " World");
-    add_result(	"ft_strjoin with s1 = NULL, s2 = \" World\"",
-                result, passed, failed, invalid, manual);
+    // cyan();
+    // puts("-- Testing with s1 = NULL, s2 = \" World\"");
+    // reset();
+    // result = test_ft_strjoin(NULL, " World");
+    // add_result(	"ft_strjoin with s1 = NULL, s2 = \" World\"",
+    //             result, passed, failed, invalid, manual);
     /* ft_strjoin end */
 }

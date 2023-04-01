@@ -6,7 +6,7 @@
 /*   By: doriani <doriani@student.42roma.it>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 22:01:06 by doriani           #+#    #+#             */
-/*   Updated: 2023/03/31 12:31:32 by doriani          ###   ########.fr       */
+/*   Updated: 2023/04/01 20:43:29 by doriani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,10 @@ t_result	test_ft_lstmap(t_list *lst, t_list *expected_list,
 	print_list(expected_list);
 	if (cmp_list(new_list, expected_list) == 0)
 	{
+		ft_lstclear(&new_list, del);
 		printf("Lists mismatch\n");
 		return (fail);
 	}
+	ft_lstclear(&new_list, del);
 	return (pass);
 }
