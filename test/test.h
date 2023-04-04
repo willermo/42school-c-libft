@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: doriani <doriani@student.42roma.it>        +#+  +:+       +#+        */
+/*   By: doriani <doriani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 12:30:06 by doriani           #+#    #+#             */
-/*   Updated: 2023/03/31 13:24:58 by doriani          ###   ########.fr       */
+/*   Updated: 2023/04/04 20:59:34 by doriani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,7 @@
 # ifndef __APPLE__
 # 	include <bsd/string.h>
 # endif
-# ifdef BONUS
-# 	include "../libft_bonus.h"
-# else
-# 	include "../libft.h"
-# endif
+# include "../libft.h"
 # define DEFAULT_SIZE 30
 
 typedef enum e_result
