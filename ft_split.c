@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: doriani <doriani@student.42roma.it>        +#+  +:+       +#+        */
+/*   By: doriani <doriani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 13:22:23 by doriani           #+#    #+#             */
-/*   Updated: 2023/03/30 12:44:22 by doriani          ###   ########.fr       */
+/*   Updated: 2023/04/04 21:14:03 by doriani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ char	**ft_split(char *str, char c)
 	int		tokens;
 	char	**strings_runner;
 
+	if (!str)
+		return (NULL);
 	tokens = count_tokens(str, c);
 	strings = (char **) malloc((tokens + 1) * sizeof(char *));
 	if (!strings)
