@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: doriani <doriani@student.42roma.it>        +#+  +:+       +#+        */
+/*   By: doriani <doriani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/30 22:30:01 by doriani           #+#    #+#             */
-/*   Updated: 2023/03/31 01:44:47 by doriani          ###   ########.fr       */
+/*   Created: 2023/03/30 22:26:43 by doriani           #+#    #+#             */
+/*   Updated: 2023/04/04 16:07:16 by doriani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+t_list	*ft_lstlast(t_list *lst)
 {
-	if (lst == NULL || f == NULL)
-		return ;
-	while (lst != NULL)
-	{
-		f(lst->content);
-		lst = lst->next;
-	}
+	t_list	*tmp;
+
+	tmp = lst;
+	if (tmp == NULL)
+		return (NULL);
+	while (tmp->next != NULL)
+		tmp = tmp->next;
+	return (tmp);
 }
