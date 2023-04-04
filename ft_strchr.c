@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: doriani <doriani@student.42roma.it>        +#+  +:+       +#+        */
+/*   By: doriani <doriani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 10:54:48 by doriani           #+#    #+#             */
-/*   Updated: 2023/03/25 11:55:43 by doriani          ###   ########.fr       */
+/*   Updated: 2023/04/04 19:43:53 by doriani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ char	*ft_strchr(const char *s, int c)
 	runner = (char *) s;
 	while (*runner)
 	{
-		if (*runner == c)
+		if (*runner == (char) c)
 			return (runner);
 		runner++;
 	}
-	if (*runner == c)
+	if (*runner == (char) c)
 		return (runner);
 	return (NULL);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: doriani <doriani@student.42roma.it>        +#+  +:+       +#+        */
+/*   By: doriani <doriani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 13:20:38 by doriani           #+#    #+#             */
-/*   Updated: 2023/04/02 14:13:03 by doriani          ###   ########.fr       */
+/*   Updated: 2023/04/04 19:54:11 by doriani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_calloc(size_t count, size_t size)
 	void	*ptr;
 	int		bytes;
 
+	if (count + size < count || count + size < size)
+		return (NULL);
 	bytes = count * size;
 	ptr = malloc(bytes);
 	if (!ptr)
