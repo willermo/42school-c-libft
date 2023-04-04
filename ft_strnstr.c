@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: doriani <doriani@student.42roma.it>        +#+  +:+       +#+        */
+/*   By: doriani <doriani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 17:29:29 by doriani           #+#    #+#             */
-/*   Updated: 2023/03/25 14:29:12 by doriani          ###   ########.fr       */
+/*   Updated: 2023/04/04 20:12:27 by doriani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	char	*runner;
 
+	if (len == 0 && !big)
+		return (NULL);
 	runner = (char *) big;
 	if (*little == '\0')
 		return (runner);
@@ -36,5 +38,5 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		runner++;
 		len--;
 	}
-	return (0);
+	return (NULL);
 }

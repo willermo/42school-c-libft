@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: doriani <doriani@student.42roma.it>        +#+  +:+       +#+        */
+/*   By: doriani <doriani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 14:36:30 by doriani           #+#    #+#             */
-/*   Updated: 2023/03/30 03:03:59 by doriani          ###   ########.fr       */
+/*   Updated: 2023/04/04 19:16:15 by doriani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,23 @@ static char	*ft_strrev(char *str)
 	return (str);
 }
 
+static int	get_buffer_size(int n)
+{
+	int	size;
+
+	size = 1;
+	if (n == 0)
+		return (2);
+	if (n < 0)
+		size++;
+	while (n != 0)
+	{
+		n /= 10;
+		size++;
+	}
+	return (size);
+}
+
 char	*ft_itoa(int n)
 {
 	char	*str;
@@ -48,7 +65,7 @@ char	*ft_itoa(int n)
 		return (ft_strdup("-2147483648"));
 	if (n < 0)
 		sign = -1;
-	str = malloc(sizeof(char) * 12);
+	str = malloc(sizeof(char) * get_buffer_size(n));
 	if (!str)
 		return (NULL);
 	while (n / 10 != 0)

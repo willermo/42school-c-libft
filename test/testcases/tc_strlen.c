@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tc_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: doriani <doriani@student.42roma.it>        +#+  +:+       +#+        */
+/*   By: doriani <doriani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 11:59:34 by doriani           #+#    #+#             */
-/*   Updated: 2023/03/26 17:39:29 by doriani          ###   ########.fr       */
+/*   Updated: 2023/04/04 16:26:34 by doriani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,12 @@ tc_strlen(  t_testcase **passed,
 	add_result(	"ft_strlen with s = \"\"",
 				result, passed, failed, invalid, manual);
 	free(str1);
+	// test 3
+	cyan();
+	puts("-- Testing with s = NULL");
+	reset();
+	result = test_ft_strlen(NULL);
+	add_result(	"ft_strlen with s = NULL",
+				result, passed, failed, invalid, manual);
 	/* ft_strlen test end */
 }

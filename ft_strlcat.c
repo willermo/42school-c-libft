@@ -3,37 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: doriani <doriani@student.42roma.it>        +#+  +:+       +#+        */
+/*   By: doriani <doriani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 18:11:43 by doriani           #+#    #+#             */
-/*   Updated: 2023/03/25 10:56:45 by doriani          ###   ########.fr       */
+/*   Updated: 2023/04/04 18:55:20 by doriani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	char	*p;
+	char		*d;
+	const char	*s;
+	size_t		n;
+	size_t		dlen;
 
-	p = dest;
-	while (size != 0 && *p != '\0')
+	d = dest;
+	s = src;
+	n = size;
+	while (n-- && *d)
+		d++;
+	dlen = d - dest;
+	n = size - dlen;
+	if (n == 0)
+		return (dlen + ft_strlen(s));
+	while (*s)
 	{
-		p++;
-		size--;
-	}
-	if (size != 0)
-	{
-		while (--size != 0)
+		if (n != 1)
 		{
-			*p = *src;
-			if (*p == '\0')
-				return (p - dest);
-			p++;
-			src++;
+			*d++ = *s;
+			n--;
 		}
-		*p = '\0';
+		s++;
 	}
-	return ((p - dest) + ft_strlen(src));
+	*d = '\0';
+	return (dlen + (s - src));
 }
